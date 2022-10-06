@@ -3,7 +3,7 @@ const path = require('path');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-consy questions = [
+const questions = [
     {
         type: 'input',
         name: 'github',
@@ -59,7 +59,7 @@ consy questions = [
         .then((inquirerResponses) => {
             console.log('Generating README...');
             writeToFile('README.md', generateMarkdown({...inquirerResponses}));
-        })
+        });
     }
 
     init();
